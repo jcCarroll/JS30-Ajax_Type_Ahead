@@ -28,6 +28,7 @@
         function findMatches(wordToMatch, cities) { // function to find matches that takes the word to mach and the cities array to search
             return cities.filter(place => {
                 const regex = new RegExp(wordToMatch, 'g'); // We need to create this to be able to pass a variable into a regular expression. Passing in wordToMatch with the flag of g = global meaning it will look through the entire string and i = insensitive meaning it will match no matter what the case.
+                return place.city.match(regex) || place.state.match(regex);
             })
         }
     </script>
