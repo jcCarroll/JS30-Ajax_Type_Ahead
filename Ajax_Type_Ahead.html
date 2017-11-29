@@ -21,7 +21,9 @@
 
         const cities = [];
 
-        fetch(endpoint).then(blob => blob.json().then(data => console.log(data))); // fetch(endpoint) returns a promise that we can work with through .then
+        fetch(endpoint)
+            .then(blob => blob.json()
+                .then(data => console.log(data))); // fetch(endpoint) returns a promise that we can work with through .then
     </script>
 </body>
 
