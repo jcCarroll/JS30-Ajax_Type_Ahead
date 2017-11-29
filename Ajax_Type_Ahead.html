@@ -19,11 +19,11 @@
     <script>
         const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
-        const cities = [];
+        const cities = []; // when trying to put data into cities you get a const error. You could change const into let to get the data into cities. When .then(data => console.log(data))); is changed to .then(data => cities = data));. You can just push it into cities with .then(data => cities.push(data))); so you can keep it as a const.
 
         fetch(endpoint)
             .then(blob => blob.json()
-                .then(data => console.log(data))); // fetch(endpoint) returns a promise that we can work with through .then
+                .then(data => cities.push(data))); // fetch(endpoint) returns a promise that we can work with through .then
     </script>
 </body>
 
